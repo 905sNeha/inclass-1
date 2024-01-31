@@ -45,7 +45,7 @@ public class CardTrick {
         if (isCardInMagicHand) {
             System.out.println("Congratulations! Your card is in the magic hand.");
         } else {
-            System.out.println("Sorry, your card is not in the magic hand.");
+            System.out.println("Sorry, your card is not in  magic hand.");
         }
     }
 
