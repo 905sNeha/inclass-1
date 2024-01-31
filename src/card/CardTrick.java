@@ -9,17 +9,23 @@ import java.util.Scanner;
 public class CardTrick {
 
     public static void main(String[] args) {
-        Card[] magicHand = new Card[7];
+        Card[] magicHand = new Card[8]; 
 
-        for (int i = 0; i < magicHand.length; i++) {
+        for (int i = 0; i < magicHand.length - 1; i++) {
             Card c = new Card();
             c.setValue(generateRandomValue());
             c.setSuit(Card.SUITS[generateRandomNumber(0, 3)]);
             magicHand[i] = c;
         }
 
+
+        Card luckyCard = new Card();
+        luckyCard.setValue(10); 
+        luckyCard.setSuit(Card.SUITS[2]); 
+        magicHand[magicHand.length - 1] = luckyCard;
+
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Pick the  card value: ");
+        System.out.print("Pick the card value: ");
         int userValue = scanner.nextInt();
         System.out.print("Pick the card suit (0-3): ");
         int userSuit = scanner.nextInt();
@@ -42,11 +48,11 @@ public class CardTrick {
             System.out.println("Sorry, your card is not in the magic hand.");
         }
     }
-    
+
     private static int generateRandomNumber(int min, int max) {
         return (int) (Math.random() * (max - min + 1) + min);
     }
-    
+
     private static int generateRandomValue() {
         return generateRandomNumber(1, 13);
     }
