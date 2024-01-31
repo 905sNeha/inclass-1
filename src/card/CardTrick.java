@@ -19,9 +19,9 @@ public class CardTrick {
         }
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Pick a card value: ");
+        System.out.print("Pick the  card value: ");
         int userValue = scanner.nextInt();
-        System.out.print("Pick a card suit (0-3): ");
+        System.out.print("Pick the card suit (0-3): ");
         int userSuit = scanner.nextInt();
 
         Card userCard = new Card();
